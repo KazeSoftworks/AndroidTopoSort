@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Proyeto4</string>
+    <string name="button_submit">Ingresar</string>
+    <string name="button_delete">Borrar</string>
+    <string name="course_submit">AAA000 AAA001 BBB002</string>
+    <string name="button_deleteAll">Borrar todo</string>
+    <string name="button_orderDisplay">Orden</string>
+</resources>
