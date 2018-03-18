@@ -5,4 +5,5 @@
     <string name="course_submit">AAA000 AAA001 BBB002</string>
     <string name="button_deleteAll">Borrar todo</string>
     <string name="button_orderDisplay">Orden</string>
+    <string name="button_return">Regresar</string>
 </resources>

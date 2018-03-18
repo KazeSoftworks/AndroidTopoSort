@@ -1,5 +1,6 @@
 package spellkaze.proyeto4;
 
+import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button buttonSubmit;
     Button buttonDeleteAll;
+    Button buttonOrder;
 
     ListView listView;
 
@@ -32,15 +34,20 @@ public class MainActivity extends AppCompatActivity {
         textField = (EditText) findViewById(R.id.editText);
         buttonSubmit = (Button) findViewById(R.id.buttonSubmit);
         buttonDeleteAll = (Button) findViewById(R.id.buttonDeleteAll);
+        buttonOrder = (Button) findViewById(R.id.button_order);
+
         listView = (ListView) findViewById(R.id.listView);
 
         buttonSubmit.setOnClickListener(ButtonSubmit);
         buttonDeleteAll.setOnClickListener(ButtonDeleteAll);
+        buttonOrder.setOnClickListener(ButtonOrder);
         listView.setOnItemClickListener(SelectItemOnList);
 
         dataHolder = DataHolder.getInstance();
 
     }
+
+
     private final AdapterView.OnItemClickListener SelectItemOnList = new AdapterView.OnItemClickListener()
     {
 
@@ -132,4 +139,11 @@ public class MainActivity extends AppCompatActivity {
         return true; //No hay coincidencias
     }
 
+    private final View.OnClickListener ButtonOrder = new View.OnClickListener()
+    {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(getApplicationContext(), OrdenActivity.class);
+            startActivity(intent);
+        }};
 }
