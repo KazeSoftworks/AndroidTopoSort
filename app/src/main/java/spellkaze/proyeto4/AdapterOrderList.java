@@ -51,12 +51,19 @@ public class AdapterOrderList extends BaseAdapter {
         }
 
         String coursePerSemester = resultList.get(position);
-
         TextView semesterText = (TextView) customView.findViewById(R.id.numberSemester);
-        semesterText.setText(String.valueOf(position));
-
         TextView courseText = (TextView) customView.findViewById(R.id.courseToTake);
-        courseText.setText(coursePerSemester);
+
+        if(coursePerSemester != "[]") {
+            semesterText.setText(String.valueOf(position + 1));
+
+            courseText.setText(coursePerSemester);
+        }else
+        {
+            semesterText.setText("X");
+
+            courseText.setText("Sin datos para mostrar");
+        }
 
         return customView;
     }
