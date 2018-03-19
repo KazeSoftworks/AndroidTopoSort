@@ -121,11 +121,6 @@ public class Toposort {
 
              }
 
-             cyclePrerequisiteList.addAll(ongoingCourses);
-             Log.d("TopoSortingRE", cyclePrerequisiteList.toString());
-             result.add(ongoingCourses.toString());
-             Log.d("TopoSortingRESULT", result.toString());
-             Log.d("tO DELTE", toDelete.toString());
 
              for(int i = toDelete.size()-1; i>=0; i--)
              {
@@ -135,10 +130,16 @@ public class Toposort {
                  Log.d("TopoSortingCheckCourse", checkCourse.toString());
 
              }
-             if(!(checkCourse.size()>0))
+             if(!(toDelete.size()>0))
              {
                  break;
              }
+
+             cyclePrerequisiteList.addAll(ongoingCourses);
+             Log.d("TopoSortingRE", cyclePrerequisiteList.toString());
+             result.add(ongoingCourses.toString());
+             Log.d("TopoSortingRESULT", result.toString());
+             Log.d("tO DELTE", toDelete.toString());
          }
 
     }
